@@ -257,7 +257,7 @@ strong {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center top;
+    object-position: 55% 15%;
     border: 3px solid rgba(200, 168, 78, 0.4);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
