@@ -1,0 +1,125 @@
+/* Feuille de style partagée par toutes les leçons et fiches. Palette charte 8mind. */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Geist+Mono&display=swap');
+
+:root {
+  --brand-dot: #5bc2ff;
+  --brand-strong: #1966b3;
+  --brand-tint: #eaf6ff;
+  --surface: #ffffff;
+  --surface-alt: #f4f6fa;
+  --ink: #111522;
+  --ink-muted: #5d687b;
+  --line: #dce2ec;
+  --positive: #0b6e62;
+  --caution: #9a5b00;
+  --critical: #b42318;
+  --positive-tint: #e6f4f1;
+  --critical-tint: #fdecea;
+  --caution-tint: #fdf3e3;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-strong: #7cc6ff;
+    --brand-tint: #12233a;
+    --surface: #070a12;
+    --surface-alt: #111522;
+    --ink: #f4f7ff;
+    --ink-muted: #a3adbf;
+    --line: #26304a;
+    --positive: #4fd1b8;
+    --caution: #f0b860;
+    --critical: #ff8a7a;
+    --positive-tint: #0d2a26;
+    --critical-tint: #2e1412;
+    --caution-tint: #2c2210;
+  }
+}
+:root[data-theme="dark"] {
+  --brand-strong: #7cc6ff; --brand-tint: #12233a; --surface: #070a12; --surface-alt: #111522;
+  --ink: #f4f7ff; --ink-muted: #a3adbf; --line: #26304a; --positive: #4fd1b8; --caution: #f0b860;
+  --critical: #ff8a7a; --positive-tint: #0d2a26; --critical-tint: #2e1412; --caution-tint: #2c2210;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--surface); color: var(--ink);
+  font: 400 17px/1.65 'Geist', system-ui, sans-serif;
+}
+main { max-width: 680px; margin: 0 auto; padding: 48px 16px 96px; }
+a { color: var(--brand-strong); text-underline-offset: 3px; }
+code, kbd { font-family: 'Geist Mono', ui-monospace, monospace; font-size: .88em; }
+code { background: var(--surface-alt); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
+kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; }
+
+.surtitre { color: var(--brand-strong); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; margin: 0 0 8px; }
+h1 { font-weight: 500; letter-spacing: -.02em; font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.15; margin: 0 0 16px; }
+h2 { font-weight: 500; letter-spacing: -.01em; font-size: 1.4rem; margin: 56px 0 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+h3 { font-weight: 500; font-size: 1.1rem; margin: 32px 0 8px; }
+.chapeau { color: var(--ink-muted); font-size: 1.12rem; margin: 0 0 24px; }
+.meta { color: var(--ink-muted); font-size: .85rem; }
+
+ul { padding-left: 0; list-style: none; }
+ul li { position: relative; padding-left: 20px; margin: 6px 0; }
+ul li::before { content: ""; position: absolute; left: 2px; top: .68em; width: 7px; height: 7px; border-radius: 50%; background: var(--brand-dot); }
+ol { padding-left: 22px; }
+ol li { margin: 8px 0; }
+ol li::marker { color: var(--brand-strong); font-weight: 500; }
+
+.encadre { background: var(--surface-alt); border-left: 3px solid var(--brand-dot); padding: 14px 18px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+.encadre.attention { border-left-color: var(--caution); background: var(--caution-tint); }
+.encadre p:first-child { margin-top: 0; } .encadre p:last-child { margin-bottom: 0; }
+.etiquette { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--brand-strong); display: block; margin-bottom: 4px; }
+.attention .etiquette { color: var(--caution); }
+
+.note { color: var(--ink-muted); font-size: .85rem; }
+sup a { text-decoration: none; font-size: .75em; }
+
+table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: .95rem; }
+th { text-align: left; font-weight: 500; background: var(--surface-alt); }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.table-defile { overflow-x: auto; }
+
+/* Schéma de la boucle */
+.boucle { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 24px 0; counter-reset: etape; }
+.boucle div { border: 1px solid var(--line); border-radius: 8px; padding: 12px; text-align: center; font-size: .92rem; }
+.boucle div strong { display: block; color: var(--brand-strong); font-weight: 500; }
+@media (max-width: 480px) { .boucle { grid-template-columns: 1fr; } }
+
+/* Quiz (assets/cours.js) */
+.quiz { margin: 24px 0; }
+.question { border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+.question p { margin: 0 0 12px; font-weight: 500; }
+.question button {
+  display: block; width: 100%; text-align: left; font: inherit; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  padding: 10px 12px; margin: 6px 0; cursor: pointer;
+}
+.question button:hover:not(:disabled) { border-color: var(--brand-dot); background: var(--brand-tint); }
+.question button:disabled { cursor: default; }
+.question button.juste { border-color: var(--positive); background: var(--positive-tint); }
+.question button.faux { border-color: var(--critical); background: var(--critical-tint); }
+.retour { margin-top: 10px; font-size: .93rem; display: none; }
+.retour.visible { display: block; }
+.retour strong { font-weight: 500; }
+.score { font-weight: 500; color: var(--brand-strong); }
+
+/* Liste d'étapes cochables */
+.etapes { list-style: none; padding: 0; counter-reset: e; }
+.etapes li { counter-increment: e; padding: 12px 0 12px 44px; border-bottom: 1px solid var(--line); position: relative; margin: 0; }
+.etapes li::before { display: none; }
+.etapes input { position: absolute; left: 4px; top: 16px; width: 20px; height: 20px; accent-color: var(--brand-strong); }
+.etapes li.fait { color: var(--ink-muted); }
+
+.prompt { background: var(--surface-alt); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; font-family: 'Geist Mono', monospace; font-size: .86rem; white-space: pre-wrap; margin: 12px 0; }
+
+nav.suite { display: flex; justify-content: space-between; gap: 16px; margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .92rem; }
+
+@media print {
+  body { font-size: 11pt; }
+  main { max-width: none; padding: 0; }
+  .question button { border: 1px solid #ccc; }
+  nav.suite { display: none; }
+  h2 { break-after: avoid; }
+  table, .encadre { break-inside: avoid; }
+}

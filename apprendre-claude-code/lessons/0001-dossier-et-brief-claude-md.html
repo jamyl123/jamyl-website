@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dossier et brief</title>
+<link rel="stylesheet" href="../assets/cours.css">
+</head>
+<body>
+<main>
+
+<p class="surtitre">Leçon 1 · 25 minutes · Application bureau</p>
+<h1>Claude Code travaille dans un dossier, avec votre brief</h1>
+<p class="chapeau">Objectif de la séance : un dossier <code>8mind-propositions</code> sur votre Mac, équipé d'un fichier <code>CLAUDE.md</code> qui décrit votre façon d'écrire une proposition. Et la preuve que Claude le relit tout seul à chaque nouvelle session.</p>
+
+<h2>1. Ce qui change par rapport au chat</h2>
+<p>Dans le chat claude.ai, vous copiez du texte, Claude répond, vous recopiez. Claude Code, lui, <strong>agit directement sur des fichiers</strong>. La documentation officielle le définit comme un outil qui « lit votre code, modifie des fichiers, exécute des commandes »<sup><a href="https://code.claude.com/docs/en/overview">1</a></sup>. Le mot « code » est trompeur : ces fichiers peuvent être des propositions, des notes de réunion ou des tableaux.</p>
+<p>Chaque demande déclenche une boucle en trois temps<sup><a href="https://code.claude.com/docs/en/how-claude-code-works">2</a></sup> :</p>
+<div class="boucle">
+  <div><strong>1. Recueillir</strong>lit les fichiers utiles</div>
+  <div><strong>2. Agir</strong>crée ou modifie</div>
+  <div><strong>3. Vérifier</strong>relit, corrige</div>
+</div>
+<p>Pensez à un consultant junior très rapide : il ne connaît que ce qu'il trouve dans le dossier que vous lui confiez, plus ce que vous lui dites.</p>
+
+<h2>2. Le dossier fixe le périmètre</h2>
+<p>Quand vous ouvrez une session, vous choisissez un <strong>dossier de projet</strong>. Claude a accès à ce dossier et à ses sous-dossiers ; pour tout le reste, il doit vous demander la permission<sup><a href="https://code.claude.com/docs/en/how-claude-code-works">2</a></sup>. Conséquence pratique : un dossier par type de travail. Un dossier « propositions », un dossier « masterclass », et non pas tout votre disque.</p>
+
+<h2>3. CLAUDE.md : le brief permanent</h2>
+<p>Un fichier nommé <code>CLAUDE.md</code>, posé à la racine du dossier, est <strong>lu automatiquement au début de chaque session</strong><sup><a href="https://code.claude.com/docs/en/memory">3</a></sup>. C'est l'équivalent du brief que vous remettriez à un nouveau collaborateur, sauf qu'il le relit chaque matin.</p>
+<p>Vous en avez déjà un sans le savoir : votre site possède un <code>CLAUDE.md</code> qui précise par exemple que vous ne codez pas et que les modifications doivent être faites entièrement, pas expliquées. C'est pour cela que Claude se comporte ainsi avec vous sur ce projet.</p>
+<div class="encadre">
+  <span class="etiquette">Ce que dit la documentation</span>
+  <ul>
+    <li>Y mettre des faits valables à chaque session : règles, conventions, structure.<sup><a href="https://code.claude.com/docs/en/memory">3</a></sup></li>
+    <li>Être concret : « 3 options tarifaires maximum » vaut mieux que « sois clair sur les prix ».</li>
+    <li>Rester sous 200 lignes : au-delà, Claude le suit moins bien.<sup><a href="https://code.claude.com/docs/en/memory">3</a></sup></li>
+    <li>C'est un contexte, pas une loi : Claude peut s'en écarter. D'où l'étape de vérification plus bas.</li>
+  </ul>
+</div>
+
+<h2>4. Votre garde-fou : le mode Manuel</h2>
+<p>Le <strong>mode de permission</strong> décide de ce que Claude peut faire sans vous demander. Pour débuter, un seul à retenir : <strong>Manual</strong> (Manuel). Claude vous montre chaque modification et attend votre accord<sup><a href="https://code.claude.com/docs/en/desktop">4</a></sup>. Le sélecteur se trouve sous la zone de saisie, raccourci <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. Les autres modes sont dans l'<a href="../reference/aide-memoire.html">aide-mémoire</a>.</p>
+<p>Deux réflexes de sécurité : <kbd>Échap</kbd> arrête Claude immédiatement, et vous pouvez lui demander d'annuler une modification de fichier, car il en garde une copie avant chaque changement<sup><a href="https://code.claude.com/docs/en/how-claude-code-works">2</a></sup>.</p>
+
+<div class="encadre attention">
+  <span class="etiquette">Point critique : la confidentialité</span>
+  <p>Les fichiers que Claude lit sont envoyés à Anthropic pour être traités. Avant d'y placer des propositions réelles, vérifiez vos engagements de confidentialité envers vos clients (AMDIE, Bank Al-Maghrib, etc.). Pour cet exercice, utilisez une proposition anonymisée ou déjà publique.</p>
+</div>
+
+<h2>5. Exercice : créer votre premier brief</h2>
+<ol class="etapes" data-cle="lecon-0001">
+  <li>Sur votre Mac, créez un dossier <code>8mind-propositions</code>. Placez-y 1 ou 2 propositions anonymisées, de préférence en PDF.</li>
+  <li>Ouvrez l'application Claude, onglet <strong>Code</strong>. Choisissez l'environnement <strong>Local</strong>, puis sélectionnez le dossier avec le bouton de dossier sous la zone de saisie.<sup><a href="https://code.claude.com/docs/en/desktop">4</a></sup></li>
+  <li>Réglez le mode sur <strong>Manual</strong>.</li>
+  <li>Collez la demande ci-dessous et répondez à ses questions.
+<div class="prompt">Lis les documents de ce dossier : ce sont des propositions commerciales 8mind.
+Avant d'écrire quoi que ce soit, pose-moi 3 questions sur ce que tu ne peux pas déduire des documents.
+Ensuite, crée un fichier CLAUDE.md de moins de 60 lignes, en français, qui décrit :
+- la structure type d'une proposition,
+- le ton et le vocabulaire,
+- les règles de mise en forme,
+- ce qu'il ne faut jamais faire.</div></li>
+  <li>Quand Claude propose le fichier, lisez-le dans la vue des modifications. Refusez et demandez une correction si une règle est fausse. Acceptez seulement quand il vous ressemble.</li>
+  <li>Ouvrez une <strong>nouvelle session</strong> sur le même dossier et demandez : <span class="prompt">Sans ouvrir les propositions, résume en 5 points comment je structure une proposition.</span></li>
+</ol>
+
+<h3>Votre retour immédiat</h3>
+<p>L'exercice est réussi si la réponse de l'étape 6 reprend vos règles alors que Claude n'a pas relu les PDF. C'est la preuve que le brief est chargé automatiquement. Si la réponse est vague, votre <code>CLAUDE.md</code> l'est aussi : rendez les règles plus précises et recommencez l'étape 6.</p>
+
+<h2>6. Vérifiez votre mémoire</h2>
+<p>Répondez sans remonter dans la page. C'est l'effort de rappel qui fixe la notion.</p>
+<div class="quiz">
+  <div class="question" data-juste="3" data-explication="Le CLAUDE.md du dossier est chargé au lancement. Les autres fichiers ne sont lus que si la tâche l'exige.">
+    <p>Au démarrage d'une session, que lit Claude Code automatiquement ?</p>
+    <button>Tous les fichiers du dossier</button>
+    <button>Vos conversations claude.ai précédentes</button>
+    <button>Le fichier CLAUDE.md du dossier</button>
+    <button>Votre boîte mail et agenda</button>
+  </div>
+  <div class="question" data-juste="1" data-explication="En mode Manual, chaque modification vous est montrée et attend votre accord. Plan ne modifie rien ; Auto et Bypass ne vous demandent pas.">
+    <p>Vous voulez valider chaque modification avant qu'elle soit appliquée. Quel mode ?</p>
+    <button>Mode Manual</button>
+    <button>Mode Auto</button>
+    <button>Mode Bypass</button>
+    <button>Mode Plan</button>
+  </div>
+  <div class="question" data-juste="4" data-explication="Claude garde une copie de chaque fichier avant de le modifier : il peut revenir en arrière.">
+    <p>Claude a modifié un fichier et le résultat ne vous plaît pas. Que faites-vous ?</p>
+    <button>Supprimer le dossier puis tout recommencer ensuite</button>
+    <button>Fermer l'application pour annuler les modifications</button>
+    <button>Rien, car les modifications sont toujours définitives</button>
+    <button>Demander à Claude d'annuler sa dernière modification</button>
+  </div>
+  <div class="question" data-juste="2" data-explication="Des règles courtes et concrètes, utiles à chaque session. Jamais de secrets : le fichier est lu et peut être partagé.">
+    <p>Que doit contenir un bon CLAUDE.md ?</p>
+    <button>L'historique complet de vos projets clients</button>
+    <button>Des règles précises valables à chaque session</button>
+    <button>Le texte intégral de toutes vos propositions</button>
+    <button>Vos mots de passe et vos accès</button>
+  </div>
+  <p class="score" aria-live="polite"></p>
+</div>
+
+<h2>Pour aller plus loin</h2>
+<p><strong>Source principale à lire :</strong> <a href="https://code.claude.com/docs/en/how-claude-code-works">How Claude Code works</a>, documentation officielle d'Anthropic (en anglais, 10 minutes). Elle détaille la boucle, les outils et les retours en arrière.</p>
+<p><strong>Des questions ?</strong> Je suis votre enseignant : revenez dans cette conversation pour toute notion floue, un blocage pendant l'exercice, ou pour me montrer votre <code>CLAUDE.md</code>. Je vous dirai ce qui est trop vague et ce qui manque.</p>
+
+<p class="note">Sources : 1. <a href="https://code.claude.com/docs/en/overview">Overview</a> · 2. <a href="https://code.claude.com/docs/en/how-claude-code-works">How Claude Code works</a> · 3. <a href="https://code.claude.com/docs/en/memory">Memory</a> · 4. <a href="https://code.claude.com/docs/en/desktop">Desktop</a>. Consultées le 24 novembre 2026.</p>
+
+<nav class="suite">
+  <a href="../reference/aide-memoire.html">Aide-mémoire Claude Code</a>
+  <span class="meta">Leçon 2 : le mode Plan et l'art de la demande (à venir)</span>
+</nav>
+</main>
+<script src="../assets/cours.js"></script>
+</body>
+</html>

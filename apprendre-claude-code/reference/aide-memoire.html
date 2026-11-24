@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aide-mémoire Claude Code</title>
+<link rel="stylesheet" href="../assets/cours.css">
+</head>
+<body>
+<main>
+<p class="surtitre">Fiche de référence · mise à jour après chaque leçon</p>
+<h1>Aide-mémoire Claude Code</h1>
+<p class="chapeau">L'essentiel pour l'application bureau, à imprimer ou garder ouvert.</p>
+
+<h2>Démarrer une session</h2>
+<ol>
+  <li>Application Claude, onglet <strong>Code</strong>.</li>
+  <li>Environnement <strong>Local</strong> (vos fichiers) ou <strong>Cloud</strong> (continue même app fermée).</li>
+  <li>Choisir le <strong>dossier de projet</strong> : Claude n'accède qu'à ce dossier sans permission.</li>
+  <li>Choisir le <strong>mode de permission</strong>, puis écrire la demande.</li>
+</ol>
+<p class="note">Source : <a href="https://code.claude.com/docs/en/desktop">Desktop</a></p>
+
+<h2>Modes de permission</h2>
+<div class="table-defile">
+<table>
+  <tr><th>Mode</th><th>Ce qu'il fait</th><th>Quand l'utiliser</th></tr>
+  <tr><td><strong>Manual</strong></td><td>Demande avant chaque modification ou commande.</td><td>Débuter, documents importants.</td></tr>
+  <tr><td><strong>Accept edits</strong></td><td>Modifie les fichiers sans demander ; demande pour les autres commandes.</td><td>Travail en confiance sur un dossier sauvegardé.</td></tr>
+  <tr><td><strong>Plan</strong></td><td>Explore et propose un plan, sans rien modifier.</td><td>Avant une tâche longue ou floue.</td></tr>
+  <tr><td><strong>Auto</strong></td><td>Un contrôle automatique bloque les actions risquées au lieu de demander.</td><td>Plus tard, quand vous connaissez l'outil.</td></tr>
+  <tr><td><strong>Bypass</strong></td><td>Aucune demande. À réserver aux environnements isolés.</td><td>Jamais sur votre Mac.</td></tr>
+</table>
+</div>
+<p>Changer de mode : sélecteur sous la zone de saisie, ou <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>.</p>
+<p class="note">Sources : <a href="https://code.claude.com/docs/en/desktop">Desktop</a>, <a href="https://code.claude.com/docs/en/how-claude-code-works">How Claude Code works</a></p>
+
+<h2>CLAUDE.md, le brief permanent</h2>
+<div class="table-defile">
+<table>
+  <tr><th>Emplacement</th><th>Portée</th></tr>
+  <tr><td><code>dossier/CLAUDE.md</code></td><td>Ce projet. Lu au début de chaque session.</td></tr>
+  <tr><td><code>~/.claude/CLAUDE.md</code></td><td>Tous vos projets (vos règles personnelles).</td></tr>
+  <tr><td><code>dossier/CLAUDE.local.md</code></td><td>Ce projet, pour vous seul, non partagé.</td></tr>
+</table>
+</div>
+<ul>
+  <li>Moins de 200 lignes. Règles concrètes et vérifiables.</li>
+  <li>C'est du contexte, pas une obligation : toujours vérifier le résultat.</li>
+  <li>Jamais de mots de passe ni de données client sensibles.</li>
+</ul>
+<p class="note">Source : <a href="https://code.claude.com/docs/en/memory">Memory</a></p>
+
+<h2>Réflexes de sécurité</h2>
+<ul>
+  <li><kbd>Échap</kbd> : arrêter Claude immédiatement.</li>
+  <li>« Annule ta dernière modification » : Claude garde une copie de chaque fichier avant de le modifier.</li>
+  <li>Ce qui part hors de votre Mac (e-mail envoyé, site publié) ne s'annule pas.</li>
+</ul>
+<p class="note">Source : <a href="https://code.claude.com/docs/en/how-claude-code-works">How Claude Code works</a></p>
+
+<nav class="suite">
+  <a href="../lessons/0001-dossier-et-brief-claude-md.html">Leçon 1 : dossier et brief</a>
+  <span></span>
+</nav>
+</main>
+</body>
+</html>
